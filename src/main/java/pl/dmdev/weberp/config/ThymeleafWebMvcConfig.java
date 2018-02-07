@@ -32,7 +32,7 @@ public class ThymeleafWebMvcConfig extends WebMvcConfigurerAdapter {
 
     private ITemplateResolver templateRelver() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
-        templateResolver.setTemplateMode(TemplateMode.HTML);
+        templateResolver.setTemplateMode("HTML5");
         templateResolver.setCharacterEncoding("UTF-8");
         templateResolver.setCacheable(false);
         templateResolver.setPrefix("classpath:/templates/");

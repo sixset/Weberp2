@@ -12,35 +12,21 @@ public class Employee {
     private String lastname;
     private String deal;
     private String rate;
-    private String sil;
-    private String sys;
-    private String eko;
+    private int pof;
+    private int numberlegit;
 
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", lastName='" + lastname + '\'' +
-                ", deal='" + deal + '\'' +
-                ", rate='" + rate + '\'' +
-                ", sil='" + sil + '\'' +
-                ", sys='" + sys + '\'' +
-                ", eko='" + eko + '\'' +
-                '}';
-    }
+
 
     public Employee(){
     }
 
-    public Employee(int id,String name, String lastname, String deal, String rate, String sil, String sys, String eko) {
+    public Employee(int id,String name, String lastname, String deal, String rate, int pof, int numberlegit) {
         this.name = name;
         this.lastname = lastname;
         this.deal = deal;
         this.rate = rate;
-        this.sil = sil;
-        this.sys = sys;
-        this.eko = eko;
+        this.pof = pof;
+        this.numberlegit = numberlegit;
         this.id = id;
     }
 
@@ -85,27 +71,19 @@ public class Employee {
         this.rate = rate;
     }
 
-    public String getSil() {
-        return sil;
+    public int getPof() {
+        return pof;
     }
 
-    public void setSil(String sil) {
-        this.sil = sil;
+    public void setPof(int pof) {
+        this.pof = pof;
     }
 
-    public String getSys() {
-        return sys;
+    public int getNumberlegit() {
+        return numberlegit;
     }
 
-    public void setSys(String sys) {
-        this.sys = sys;
-    }
-
-    public String getEko() {
-        return eko;
-    }
-
-    public void setEko(String eko) {
-        this.eko = eko;
+    public void setNumberlegit(int numberlegit) {
+        this.numberlegit = numberlegit;
     }
 }

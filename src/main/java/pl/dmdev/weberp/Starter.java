@@ -15,8 +15,8 @@ public class Starter implements CommandLineRunner {
     @Override
     public void run(String... strings) throws Exception {
 
-        employeeRepository.createEmployee(2, "Dominik", "Martyniak", "Etat", "22", "ZUS", "spec", "Ma");
-        employeeRepository.createEmployee(3, "Dominik", "Etatowy", "Etat", "22", "COS", "ZUS", null);
+        employeeRepository.createEmployee(2, "Dominik", "Martyniak", "Etat", "22", 3421, 41444);
+        employeeRepository.createEmployee(3, "Dominik", "Etatowy", "Etat", "22", 4124, 4442);
 
         System.out.println(employeeRepository.getAllEmployee());
 
