@@ -86,4 +86,6 @@ public class Employee {
     public void setNumberlegit(int numberlegit) {
         this.numberlegit = numberlegit;
     }
+
+
 }

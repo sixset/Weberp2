@@ -11,9 +11,5 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("/newemployee")
-    public String newemployee() {
-        return "newemployee";
-    }
 
 }

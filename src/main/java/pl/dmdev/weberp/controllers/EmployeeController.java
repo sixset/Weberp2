@@ -25,10 +25,10 @@ EmployyeSerwice employyeSerwice;
         return "employees";
     }
 
-    @RequestMapping("/employeform")
+    @RequestMapping("/newemployee")
     public String createEmployee(Model model){
         model.addAttribute("employye",employyeSerwice.createEmptyEmployee());
-        return "employeform";
+        return "newemployee";
     }
 
     @RequestMapping(value = "/employees",method = RequestMethod.POST)

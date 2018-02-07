@@ -17,7 +17,10 @@ public class Starter implements CommandLineRunner {
 
         employeeRepository.createEmployee(2, "Dominik", "Martyniak", "Etat", "22", 3421, 41444);
         employeeRepository.createEmployee(3, "Dominik", "Etatowy", "Etat", "22", 4124, 4442);
-
+        employeeRepository.createEmployee(3, "Dominik", "Etatowy", "Etat", "22", 4124, 4442);
+        for (int i = 0; i <122 ; i++) {
+            employeeRepository.createEmployee(i, "Dominik"+i, "Etatowy", "Etat", "22", 4124, 4442);
+        }
         System.out.println(employeeRepository.getAllEmployee());
 
 
