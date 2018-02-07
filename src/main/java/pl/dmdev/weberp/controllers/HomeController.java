@@ -11,8 +11,4 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("/employes")
-    public String allEmployes() {
-        return "employees";
-    }
 }
