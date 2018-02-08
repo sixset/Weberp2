@@ -13,20 +13,26 @@ public class Employee {
     private String deal;
     private String rate;
     private int pof;
-    private int numberlegit;
+    private int numberoflegit;
+    private String sil;
+    private String sys;
+    private String eko;
 
 
 
     public Employee(){
     }
 
-    public Employee(int id,String name, String lastname, String deal, String rate, int pof, int numberlegit) {
+    public Employee(int id,String name, String lastname, String deal, String rate, int pof, int numberoflegit,String sil,String sys,String eko) {
         this.name = name;
         this.lastname = lastname;
         this.deal = deal;
         this.rate = rate;
         this.pof = pof;
-        this.numberlegit = numberlegit;
+        this.numberoflegit = numberoflegit;
+        this.sil = sil;
+        this.eko = eko;
+        this.sys = sys;
         this.id = id;
     }
 
@@ -79,13 +85,35 @@ public class Employee {
         this.pof = pof;
     }
 
-    public int getNumberlegit() {
-        return numberlegit;
+    public int getNumberoflegit() {
+        return numberoflegit;
     }
 
-    public void setNumberlegit(int numberlegit) {
-        this.numberlegit = numberlegit;
+    public void setNumberoflegit(int numberoflegit) {
+        this.numberoflegit = numberoflegit;
     }
 
+    public String getSil() {
+        return sil;
+    }
 
+    public void setSil(String sil) {
+        this.sil = sil;
+    }
+
+    public String getSys() {
+        return sys;
+    }
+
+    public void setSys(String sys) {
+        this.sys = sys;
+    }
+
+    public String getEko() {
+        return eko;
+    }
+
+    public void setEko(String eko) {
+        this.eko = eko;
+    }
 }
