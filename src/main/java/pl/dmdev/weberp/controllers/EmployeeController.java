@@ -31,6 +31,12 @@ EmployyeSerwice employyeSerwice;
         return "newemployee";
     }
 
+    @RequestMapping("/editemployee")
+    public String editEmployee(Model model){
+        model.addAttribute("employe",employyeSerwice.createEmptyEmployee());
+        return "editemployee";
+    }
+
     @RequestMapping(value = "/employees",method = RequestMethod.POST)
     public String saveEmployee(Employee employee){
         employyeSerwice.saveEmployee(employee);

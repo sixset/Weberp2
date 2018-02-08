@@ -39,7 +39,7 @@
   <body class="nav-md">
     <div class="container body">
       <div class="main_container">
-        <div class="col-md-3 left_col">
+        <div class="col-md-3 left_col menu_fixed">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
               <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
@@ -81,10 +81,10 @@
             <div class="clearfix"></div>
 
             <div class="row">
-              <div class="col-md-12 col-sm-12 col-xs-12">
+              <div class="col-md-14 col-sm-14 col-xs-14">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Pracownicy <small>Users</small></h2>
+                    <h2>Pracownicy </h2>
 
                     <div class="clearfix"></div>
                   </div>
@@ -99,6 +99,8 @@
                           <th>Stawka</th>
                           <th>Numer Legitymacji</th>
                           <th>POF</th>
+                          <th>Edytuj</th>
+                          <th>Usuń</th>
                         </tr>
                       </thead>
 
@@ -111,8 +113,9 @@
                           <td th:text="${employee.rate}"></td>
                           <td th:text="${employee.numberoflegit}"></td>
                           <td th:text="${employee.pof}"></td>
+                          <td><a href="/editemployee?=${employee.id}"><i class="fa fa-edit "> Edytuj</i> </a></td>
+                          <td><a href=""><i class="fa fa-close "> Usuń</i> </a></td>
                         </tr>
-
                       </tbody>
                     </table>
                   </div>
