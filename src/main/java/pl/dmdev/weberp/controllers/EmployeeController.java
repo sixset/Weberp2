@@ -27,7 +27,7 @@ EmployyeSerwice employyeSerwice;
 
     @RequestMapping("/newemployee")
     public String createEmployee(Model model){
-        model.addAttribute("employye",employyeSerwice.createEmptyEmployee());
+        model.addAttribute("employe",employyeSerwice.createEmptyEmployee());
         return "newemployee";
     }
 

@@ -16,7 +16,7 @@ public class Starter implements CommandLineRunner {
     public void run(String... strings) throws Exception {
 
         for (int i = 0; i <10 ; i++) {
-            employeeRepository.createEmployee(i, "Dominik"+i, "Etatowy", "Etat", "22", 4124, 4442,null,null,null);
+            employeeRepository.createEmployee(i, "Dominik"+i, "Etatowy", "Etat", 22, 4124, 4442,null,null,null);
         }
         System.out.println(employeeRepository.getAllEmployee());
 

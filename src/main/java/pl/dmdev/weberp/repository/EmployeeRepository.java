@@ -17,7 +17,7 @@ public class EmployeeRepository {
 
     Map<Integer,Employee> employeeMap =new  HashMap<>();
 
-    public void createEmployee(int id,String name, String lastname, String deal, String rate, int pof, int numberoflegit,String sil,String sys,String eko){
+    public void createEmployee(int id,String name, String lastname, String deal, int rate, int pof, int numberoflegit,String sil,String sys,String eko){
        Employee newemployee = new Employee( id, name,  lastname,  deal,  rate,  pof,  numberoflegit ,sil,sys,eko);
         employeeMap.put(id,newemployee);
     }

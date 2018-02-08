@@ -11,7 +11,7 @@ public class Employee {
     private String name;
     private String lastname;
     private String deal;
-    private String rate;
+    private int rate;
     private int pof;
     private int numberoflegit;
     private String sil;
@@ -23,7 +23,7 @@ public class Employee {
     public Employee(){
     }
 
-    public Employee(int id,String name, String lastname, String deal, String rate, int pof, int numberoflegit,String sil,String sys,String eko) {
+    public Employee(int id,String name, String lastname, String deal, int rate, int pof, int numberoflegit,String sil,String sys,String eko) {
         this.name = name;
         this.lastname = lastname;
         this.deal = deal;
@@ -69,11 +69,11 @@ public class Employee {
         this.deal = deal;
     }
 
-    public String getRate() {
+    public int getRate() {
         return rate;
     }
 
-    public void setRate(String rate) {
+    public void setRate(int rate) {
         this.rate = rate;
     }
 
