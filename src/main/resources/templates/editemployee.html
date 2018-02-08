@@ -28,22 +28,23 @@
  <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" th:object="${employe}" th:action="@{/employees}" th:method="post" >
 
        <div class="form-group">
-         <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">Imie <span class="required">*</span>
+
+         <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name"><span class="required">*</span>
          </label>
          <div class="col-md-3 col-sm-2 col-xs-12">
-           <input type="text" id="first-name" required="required" class="form-control col-md-7 col-xs-12" th:field="*{name}">
+           <input  type="text" id="name" name="name"  class="form-control col-md-7 col-xs-12" th:value="${editemployee.name}">
          </div>
          <label class="control-label col-md-1 col-sm-1 col-xs-12" for="first-name">Nazwisko
          </label>
          <div class="col-md-4 col-sm-4 col-xs-12">
-         <input type="text" id="last-name" required="required" class="form-control col-md-7 col-xs-12" th:field="*{lastname}">
+         <input type="text" id="lastname" name="lastname" required="required" class="form-control col-md-7 col-xs-12" th:value="${editemployee.lastname}">
          </div>
        </div>
 
        <div class="form-group">
          <label for="deal" class="control-label col-md-2 col-sm-2 col-xs-12">Umowa<span class="required">*</span></label>
          <div class="col-md-3 col-sm-3 col-xs-12">
-            <select id="dealvalue" class="form-control" required="required"  th:field="*{deal}">
+            <select id="dealvalue" class="form-control" required="required">
              <option th:value="etat">Etat</option>
                <option th:value="etat2">Etat 1/2</option>
                <option th:value="etat4">Etat 1/4</option>
@@ -56,26 +57,26 @@
          <label class="control-label col-md-1 col-sm-1 col-xs-12">Stawka <span class="required">*</span>
          </label>
          <div class="col-md-4 col-sm-4 col-xs-12">
-         <input id="rate" class="form-control col-md-7 col-xs-12" required="required" type="number" th:field="*{rate}">
+         <input id="rate" name="rate" class="form-control col-md-7 col-xs-12" required="required" type="number" th:value="${editemployee.rate}">
          </div>
        </div>
        <div class="form-group">
                         <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">Legitymacja <span class="required">*</span>
                         </label>
                         <div class="col-md-3 col-sm-2 col-xs-12">
-                          <input type="number" id="numberoflegit" required="required" class="form-control col-md-7 col-xs-12" th:field="*{numberoflegit}">
+                          <input type="number" id="numberoflegit" name="numberoflegit" required="required" class="form-control col-md-7 col-xs-12"  th:value="${editemployee.pof}">
                         </div>
                         <label class="control-label col-md-1 col-sm-1 col-xs-12" for="first-name">Pof
                         </label>
                         <div class="col-md-4 col-sm-4 col-xs-12">
-                        <input type="number" id="pof" required="required" class="form-control col-md-7 col-xs-12" th:field="*{numberoflegit}">
+                        <input type="number" id="numberoflegit" name="numberoflegit" required="required" class="form-control col-md-7 col-xs-12" th:value="${editemployee.numberoflegit}">
                         </div>
                       </div>
 
        <div class="form-group">
         <label for="deal" class="control-label col-md-2 col-sm-2 col-xs-12">SIL<span class="required">*</span></label>
        <div class="col-md-2 col-sm-2 col-xs-12">
-        <select id="heard" class="form-control" required="required"  th:field="*{sil}" >
+        <select id="heard" class="form-control" required="required"   >
        <option value="Brak">Brak</option>
                      <option value="Etat">Etat</option>
                         <option value="etat4">Etat 1/4</option>
@@ -88,7 +89,7 @@
 
            <label for="deal" class="control-label col-md-1 col-sm-1 col-xs-12">SYS<span class="required">*</span></label>
   <div class="col-md-2 col-sm-1 col-xs-12">
-   <select id="heard" class="form-control" required="required"  th:field="*{sys}">
+   <select id="heard" class="form-control" required="required"  >
   <option value="Brak">Brak</option>
                 <option value="Etat">Etat</option>
                    <option value="etat4">Etat 1/4</option>
@@ -102,7 +103,7 @@
 
       <label for="deal" class="control-label col-md-1 col-sm-1 col-xs-12">EKO<span class="required">*</span></label>
              <div class="col-md-2 col-sm-1 col-xs-12">
-              <select id="heard" class="form-control" required="required"  th:field="*{eko}">
+              <select id="heard" class="form-control" required="required" >
               <option value="Brak">Brak</option>
               <option value="Etat">Etat</option>
                  <option value="etat4">Etat 1/4</option>

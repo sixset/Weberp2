@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import pl.dmdev.weberp.domain.Employee;
 import pl.dmdev.weberp.repository.EmployeeRepository;
 
 @Component
@@ -18,6 +19,11 @@ public class Starter implements CommandLineRunner {
         for (int i = 0; i <10 ; i++) {
             employeeRepository.createEmployee(i, "Dominik"+i, "Etatowy", "Etat", 22, 4124, 4442,null,null,null);
         }
+        System.out.println(employeeRepository.getAllEmployee());
+        Employee employee = new Employee(0, "Dominikaaaaaaa", "Etatowy", "Etat", 22, 4124, 4442,null,null,null);
+employeeRepository.saveEditEmploye(employee);
+
+
         System.out.println(employeeRepository.getAllEmployee());
 
 

@@ -116,4 +116,20 @@ public class Employee {
     public void setEko(String eko) {
         this.eko = eko;
     }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", lastname='" + lastname + '\'' +
+                ", deal='" + deal + '\'' +
+                ", rate=" + rate +
+                ", pof=" + pof +
+                ", numberoflegit=" + numberoflegit +
+                ", sil='" + sil + '\'' +
+                ", sys='" + sys + '\'' +
+                ", eko='" + eko + '\'' +
+                '}';
+    }
 }

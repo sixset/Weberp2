@@ -27,13 +27,6 @@ public class EmployeeRepository {
         employeeMap.put(random.nextInt(100),employee);
     }
 
-
-    public void editEmpoyee(int id, Employee employee){
-
-//        employeeMap.get(id);
-        System.out.println("edytuje "+  employeeMap.get(id));
-    }
-
     public Collection<Employee> getAllEmployee(){
         return employeeMap.values();
     }
@@ -47,8 +40,7 @@ public class EmployeeRepository {
     }
 
 
-
-
-
-
+    public void saveEditEmploye(Employee employee) {
+        employeeMap.put(employee.getId(),employee);
+    }
 }

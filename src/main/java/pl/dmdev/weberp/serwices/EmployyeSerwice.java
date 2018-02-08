@@ -28,4 +28,13 @@ public class EmployyeSerwice {
     public void saveEmployee(Employee employee) {
         employeeRepository.addNewEmployee(employee);
     }
+
+    public Employee getEmployee(int id) {
+        return employeeRepository.getEmployeeById(id);
+
+    }
+
+    public void saveEditEmploye(Employee employee) {
+        employeeRepository.saveEditEmploye(employee);
+    }
 }
