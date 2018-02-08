@@ -26,10 +26,14 @@
    <div class="x_content">
      <br />
  <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left" th:object="${employe}" th:action="@{/employees}" th:method="post" >
-
+<div class="form-group">
+<label class="control-label col-md-2 col-sm-2 col-xs-12">Id</label>
+ <div class="col-md-8 col-sm-8 col-xs-12">
+ <input type="text" id="id" name="id" class="form-control" readonly="readonly" th:value="${editemployee.id}">
+ </div>
+ </div>
        <div class="form-group">
-
-         <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name"><span class="required">*</span>
+         <label class="control-label col-md-2 col-sm-2 col-xs-12" for="first-name">Imię:<span class="required">*</span>
          </label>
          <div class="col-md-3 col-sm-2 col-xs-12">
            <input  type="text" id="name" name="name"  class="form-control col-md-7 col-xs-12" th:value="${editemployee.name}">
