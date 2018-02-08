@@ -50,7 +50,7 @@ EmployyeSerwice employyeSerwice;
 
     @RequestMapping(value = "/employees",method = RequestMethod.POST)
     public String saveEmployee(Employee employee){
-        employeeRepository.saveEditEmploye(employee);
+        employeeRepository.saveEditEmploye(employee.getId(),employee);
         return "redirect:/employees";
     }
 }

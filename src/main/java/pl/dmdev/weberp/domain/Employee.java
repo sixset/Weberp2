@@ -3,19 +3,35 @@ package pl.dmdev.weberp.domain;
 
 import org.springframework.stereotype.Component;
 
-@Component
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+
+@Entity
 public class Employee {
 
-
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private int id;
+
     private String name;
+
     private String lastname;
+
     private String deal;
+
     private int rate;
+
     private int pof;
+
     private int numberoflegit;
+
     private String sil;
+
     private String sys;
+
     private String eko;
 
 

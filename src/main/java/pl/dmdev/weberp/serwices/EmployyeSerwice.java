@@ -35,6 +35,6 @@ public class EmployyeSerwice {
     }
 
     public void saveEditEmploye(Employee employee) {
-        employeeRepository.saveEditEmploye(employee);
+        employeeRepository.saveEditEmploye(employee.getId(),employee);
     }
 }
