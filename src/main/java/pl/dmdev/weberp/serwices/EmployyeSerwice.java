@@ -3,7 +3,7 @@ package pl.dmdev.weberp.serwices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import pl.dmdev.weberp.domain.Employee;
-import pl.dmdev.weberp.repository.EmployeeRepository;
+import pl.dmdev.weberp.domain.repository.EmployeeRepository;
 
 
 import java.util.ArrayList;

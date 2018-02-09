@@ -1,6 +1,5 @@
-package pl.dmdev.weberp.repository;
+package pl.dmdev.weberp.domain.repository;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 import pl.dmdev.weberp.domain.Employee;
@@ -9,9 +8,6 @@ import pl.dmdev.weberp.domain.Employee;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
 
 @Repository
 public class EmployeeRepository {
