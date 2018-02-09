@@ -1,6 +1,7 @@
 package pl.dmdev.weberp.domain.repository;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 import pl.dmdev.weberp.domain.Inspector;
 
 import javax.persistence.EntityManager;
@@ -13,6 +14,7 @@ public class InspectorRepository {
     @PersistenceContext
     private EntityManager em;
 
+    @Transactional
     public void addNewInspector(Inspector inspector){
         em.persist(inspector);
     }

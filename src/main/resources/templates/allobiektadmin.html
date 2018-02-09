@@ -90,14 +90,12 @@
                   </div>
                   <div class="x_content">
 
-                    <table id="datatable" class="table table-striped table-bordered" th:each="inspektor :: allInspector ">
-
+                    <table id="datatable" class="table table-striped table-bordered">
                       <thead>
                         <tr>
-                          <th>Nazwa</th>
-                          <th>Inspektor</th>
-                          <th>Edytuj</th>
-                          <th>Usuń</th>
+                          <th>Imię</th>
+                          <th>Imię</th>
+
                         </tr>
                       </thead>
 
@@ -105,10 +103,8 @@
                       <tbody>
                         <tr th:each=" object : ${allobject}">
                           <td th:text="${object.name}"></td>
-                          <td th:text="${inspektor.name}"></td>
+                          <td th:text="${object.inspector.name}"></td>
 
-                          <td><a th:href="${'/editemployee?id='+employee.id}"><i class="fa fa-edit "> Edytuj</i></a> </td>
-                          <td><a href=""><i class="fa fa-close "> Usuń</i> </a></td>
                         </tr>
                       </tbody>
                     </table>

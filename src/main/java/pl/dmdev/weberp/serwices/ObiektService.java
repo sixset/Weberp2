@@ -21,13 +21,17 @@ public class ObiektService {
         return obiektRepository.getAllObiekt();
     }
 
-    public Collection<Inspector> getAllInspektor() {
-        //poprawic na strem
-        List<Obiekt> obiektList = new ArrayList<>(obiektRepository.getAllObiekt());
-        Collection <Inspector> allInspector = null;
-        for (int i = 0; i <obiektList.size() ; i++) {
-            allInspector.add(obiektList.get(i).getInspector());
-        }
-        return allInspector;
+
+    public Obiekt createEmptyObiekt() {
+        return new Obiekt();
+    }
+
+    public void addNewObject(Obiekt obiekt) {
+
+        obiektRepository.addNewObiekt(obiekt);
+    }
+
+    public Obiekt getObjectById(int id) {
+        return obiektRepository.getInspecotrById(id);
     }
 }
