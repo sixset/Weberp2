@@ -18,9 +18,13 @@ public class InspectorRepository {
     public void addNewInspector(Inspector inspector){
         em.persist(inspector);
     }
+    @Transactional
+    public void mergeInspector(Inspector inspector){
+        em.merge(inspector);
+    }
 
     public Collection<Inspector> getAllInspector(){
-        return em.createQuery("from Inspecotr", Inspector.class).getResultList();
+        return em.createQuery("from Inspector", Inspector.class).getResultList();
     }
 
     public Inspector getInspecotrById(int id){

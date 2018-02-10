@@ -10,13 +10,22 @@ public class Obiekt {
     @Column(name = "id",updatable = false,nullable = false)
     private int id;
     private String name;
+    private String adres;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "id_inspektor")
     private Inspector inspector;
 
     public Obiekt(){
 
+    }
+
+    public String getAdres() {
+        return adres;
+    }
+
+    public void setAdres(String adres) {
+        this.adres = adres;
     }
 
     public int getId() {

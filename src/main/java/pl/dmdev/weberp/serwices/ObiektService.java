@@ -17,6 +17,9 @@ public class ObiektService {
     @Autowired
     ObiektRepository obiektRepository;
 
+    @Autowired
+    InspectorService inspectorService;
+
     public Collection<Obiekt> getAllObiekt() {
         return obiektRepository.getAllObiekt();
     }
@@ -26,12 +29,19 @@ public class ObiektService {
         return new Obiekt();
     }
 
-    public void addNewObject(Obiekt obiekt) {
+    public void addNewObjectDB(Obiekt obiekt) {
 
         obiektRepository.addNewObiekt(obiekt);
     }
 
     public Obiekt getObjectById(int id) {
         return obiektRepository.getInspecotrById(id);
+    }
+
+    public void createnEewObject(int idInspecotr , Obiekt obiekt){
+       Inspector inspector= inspectorService.getInspector(idInspecotr);
+       inspector.addObject(obiekt);
+       inspectorService.mergeInspector(inspector);
+
     }
 }

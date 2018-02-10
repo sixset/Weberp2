@@ -10,7 +10,6 @@ import org.thymeleaf.ITemplateEngine;
 import org.thymeleaf.spring4.SpringTemplateEngine;
 import org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring4.view.ThymeleafViewResolver;
-import org.thymeleaf.templatemode.TemplateMode;
 import org.thymeleaf.templateresolver.ITemplateResolver;
 
 @Configuration
@@ -39,4 +38,6 @@ public class ThymeleafWebMvcConfig extends WebMvcConfigurerAdapter {
         templateResolver.setSuffix(".html");
         return templateResolver;
     }
+
+
 }

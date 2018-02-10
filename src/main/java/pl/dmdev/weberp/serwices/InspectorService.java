@@ -21,8 +21,11 @@ public class InspectorService {
         return inspectorRepository.getAllInspector();
     }
 
-    public void addNewInspecotr(Inspector inspector){
+    public void addNewIncpectorToDB(Inspector inspector){
         inspectorRepository.addNewInspector(inspector);
+    }
+    public void mergeInspector(Inspector inspector){
+        inspectorRepository.mergeInspector(inspector);
     }
 
     public Inspector addObiekt(Inspector inspector, Obiekt obiekt){
