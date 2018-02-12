@@ -8,7 +8,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title >DM-DEV | Pracownicy </title>
+    <title >DM-DEV | Objects </title>
 
 
     <!-- Bootstrap -->
@@ -72,20 +72,19 @@
           <div class="">
             <div class="page-title">
               <div class="title_left">
-                <h3>Lista wszystkich obiektów </h3>
+                <h3>Lista stworzonych grafików</h3>
               </div>
+              <div class="tile_left">
+                    <div class="col-md-2 col-sm-3 col-xs-12 form-group pull-right">
+                                             <div class="buttons">
+                                               <a class="btn btn-primary" href="/inspektor/schedules/new/schedule" role="button" >Dodaj Nowy Grafik</a>
 
-
+                                          </div>
+                                        </div>
+</div>
 
 
             </div>
-            <div class="title_right">
-                            <div class="col-md-2 col-sm-3 col-xs-12 form-group pull-right">
-                               <div class="buttons">
-                                 <a class="btn btn-primary" href="/dyrekcja/newobject" role="button" >Dodaj Nowy Obiekt</a>
-
-                            </div>
-                          </div>
 
             <div class="clearfix"></div>
 
@@ -93,11 +92,14 @@
               <div class="col-md-14 col-sm-14 col-xs-14">
                 <div class="x_panel">
                   <div class="x_title">
-                    <h2>Obiekty </h2>
+                    <h2>Nie Wysłane grafiki </h2>
 
                     <div class="clearfix"></div>
                   </div>
                   <div class="x_content">
+                  <p class="text-muted font-13 m-b-30"></p>
+                     Poniżej znajduje się lista grafików które nie zostały jeszce wysłane do kadr
+
 
                     <table id="datatable" class="table table-striped table-bordered">
                       <thead>
@@ -105,7 +107,8 @@
                           <th>Nazwa Obiektu</th>
                           <th>Adres</th>
                           <th>Inspektor</th>
-                          <th>Usuń</th>
+
+
                         </tr>
                       </thead>
                       <tbody>
@@ -113,7 +116,6 @@
                           <td th:text="${object.name}"></td>
                           <td th:text="${object.adres}"></td>
                           <td th:text="${object.inspector.name}"></td>
-                          <td><a th:href="${'/dyrekcja/delete?id='+object.id}"><i class="fa fa-close "> USUN</i></a> </td>
 
 
                         </tr>
@@ -130,6 +132,7 @@
             </div>
           </div>
         </div>
+
         <!-- /page content -->
         <!-- footer content -->
          <div data-th-replace="fragments/fragments-footer :: footer"></div>

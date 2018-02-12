@@ -36,7 +36,7 @@ public class MenageObiektController {
         return "objectsadmin";
     }
 
-    @GetMapping("/newobject")
+    @GetMapping("/dyrekcja/newobject")
     public String newObiekt(Model model) {
         Inspector inspector = inspectorService.createEmptyInspector();
         Inspector inspecto2 = inspectorService.createEmptyInspector();
