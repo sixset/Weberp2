@@ -2,8 +2,8 @@ package pl.dmdev.weberp.serwices;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import pl.dmdev.weberp.domain.Inspector;
-import pl.dmdev.weberp.domain.Obiekt;
+import pl.dmdev.weberp.domain.model.Inspector;
+import pl.dmdev.weberp.domain.model.Obiekt;
 import pl.dmdev.weberp.domain.repository.InspectorRepository;
 
 import java.util.Collection;

@@ -6,17 +6,15 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import pl.dmdev.weberp.domain.Inspector;
-import pl.dmdev.weberp.domain.Obiekt;
+import org.springframework.web.bind.annotation.RequestParam;
+import pl.dmdev.weberp.domain.model.Inspector;
+import pl.dmdev.weberp.domain.model.Obiekt;
 import pl.dmdev.weberp.serwices.InspectorService;
 import pl.dmdev.weberp.serwices.ObiektService;
 import pl.dmdev.weberp.utils.IdHolder;
 
-import javax.persistence.Id;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 @Controller
 public class MenageObiektController {
@@ -26,10 +24,10 @@ public class MenageObiektController {
     @Autowired
     InspectorService inspectorService;
 
-    @GetMapping("/allobiektadmin")
-    public String index(Model model) { ;
-        return "allobiektadmin";
-    }
+//    @GetMapping("/allobiektadmin")
+//    public String index(Model model) { ;
+//        return "allobiektadmin";
+//    }
     @GetMapping("/dyrekcja/objects")
     public String getAllObjectsForAdmin(Model model) {
         List<Obiekt> allObiekt = new ArrayList<>(obiektService.getAllObiekt());
@@ -59,5 +57,12 @@ public class MenageObiektController {
         obiektService.createnEewObject(Integer.valueOf(idHolder.getId()),obiekt);
         return "redirect:/dyrekcja/objects";
     }
+
+    @RequestMapping("/dyrekcja/delete")
+    public String deleteObject(@RequestParam("id") Integer id, Model model) {
+       obiektService.deleteObject(id);
+        return "redirect:/dyrekcja/objects";
+    }
+
 
 }

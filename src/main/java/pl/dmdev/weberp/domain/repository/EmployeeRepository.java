@@ -2,7 +2,7 @@ package pl.dmdev.weberp.domain.repository;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import pl.dmdev.weberp.domain.Employee;
+import pl.dmdev.weberp.domain.model.Employee;
 
 
 import javax.persistence.EntityManager;

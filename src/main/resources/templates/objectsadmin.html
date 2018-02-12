@@ -80,9 +80,10 @@
 
             </div>
             <div class="title_right">
-                            <div class="col-md-3 col-sm-3 col-xs-12 form-group pull-right top_search">
+                            <div class="col-md-2 col-sm-3 col-xs-12 form-group pull-right">
                                <div class="buttons">
-                                 <button type="button" class="btn btn-default btn-lg"><a href="/newobject">Dodaj Nowy Obiket</a> </button>
+                                 <a class="btn btn-primary" href="/newobject" role="button" >Dodaj Nowy Obiekt</a>
+
                             </div>
                           </div>
 
@@ -104,6 +105,7 @@
                           <th>Nazwa Obiektu</th>
                           <th>Adres</th>
                           <th>Inspektor</th>
+                          <th>Usuń</th>
 
 
                         </tr>
@@ -113,6 +115,7 @@
                           <td th:text="${object.name}"></td>
                           <td th:text="${object.adres}"></td>
                           <td th:text="${object.inspector.name}"></td>
+                          <td><a th:href="${'/dyrekcja/delete?id='+object.id}"><i class="fa fa-close "> USUN</i></a> </td>
 
 
                         </tr>

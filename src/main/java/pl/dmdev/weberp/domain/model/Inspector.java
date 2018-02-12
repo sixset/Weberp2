@@ -1,4 +1,4 @@
-package pl.dmdev.weberp.domain;
+package pl.dmdev.weberp.domain.model;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -8,7 +8,7 @@ import java.util.List;
 public class Inspector extends User{
 
 
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "inspector")
+    @OneToMany(orphanRemoval=true,cascade = CascadeType.ALL,mappedBy = "inspector")
     private List<Obiekt> objects = new ArrayList<Obiekt>();
 
     public Inspector(){

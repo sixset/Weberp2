@@ -2,7 +2,7 @@ package pl.dmdev.weberp.domain.repository;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import pl.dmdev.weberp.domain.Inspector;
+import pl.dmdev.weberp.domain.model.Inspector;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;

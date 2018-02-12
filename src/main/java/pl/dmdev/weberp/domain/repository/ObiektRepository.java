@@ -2,7 +2,7 @@ package pl.dmdev.weberp.domain.repository;
 
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
-import pl.dmdev.weberp.domain.Obiekt;
+import pl.dmdev.weberp.domain.model.Obiekt;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -28,4 +28,8 @@ public class ObiektRepository {
     }
 
 
+    public void delete(Integer id) {
+        Obiekt obiekt = em.find(Obiekt.class,id);
+        em.remove(obiekt);
+    }
 }

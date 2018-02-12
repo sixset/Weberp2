@@ -2,14 +2,11 @@ package pl.dmdev.weberp.serwices;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.dmdev.weberp.domain.Inspector;
-import pl.dmdev.weberp.domain.Obiekt;
+import pl.dmdev.weberp.domain.model.Inspector;
+import pl.dmdev.weberp.domain.model.Obiekt;
 import pl.dmdev.weberp.domain.repository.ObiektRepository;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
-import java.util.stream.Collectors;
 
 @Service
 public class ObiektService {
@@ -43,5 +40,12 @@ public class ObiektService {
        inspector.addObject(obiekt);
        inspectorService.mergeInspector(inspector);
 
+    }
+
+    public void deleteObject(Integer id) {
+        Obiekt obiekt =obiektRepository.getInspecotrById(id);
+        Inspector inspector =obiekt.getInspector();
+        inspector.getObjects().remove(obiekt);
+        inspectorService.mergeInspector(inspector);
     }
 }

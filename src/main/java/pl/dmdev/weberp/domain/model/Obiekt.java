@@ -1,4 +1,4 @@
-package pl.dmdev.weberp.domain;
+package pl.dmdev.weberp.domain.model;
 
 import javax.persistence.*;
 
@@ -12,7 +12,7 @@ public class Obiekt {
     private String name;
     private String adres;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.DETACH)
     @JoinColumn(name = "id_inspektor")
     private Inspector inspector;
 

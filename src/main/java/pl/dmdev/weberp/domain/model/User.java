@@ -1,4 +1,4 @@
-package pl.dmdev.weberp.domain;
+package pl.dmdev.weberp.domain.model;
 
 import javax.persistence.*;
 

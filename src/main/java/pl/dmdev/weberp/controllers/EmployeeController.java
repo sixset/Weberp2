@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import org.springframework.web.bind.annotation.RequestParam;
-import pl.dmdev.weberp.domain.Employee;
+import pl.dmdev.weberp.domain.model.Employee;
 import pl.dmdev.weberp.domain.repository.EmployeeRepository;
 import pl.dmdev.weberp.serwices.EmployyeSerwice;
 
