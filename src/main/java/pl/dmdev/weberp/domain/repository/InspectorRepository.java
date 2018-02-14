@@ -32,4 +32,11 @@ public class InspectorRepository {
     }
 
 
+    public Inspector getInspectorByUsername(String username) {
+
+        Inspector inspectorByName = em.createQuery("from Inspector k where k.username=:username", Inspector.class)
+                .setParameter("username", username).getSingleResult();
+
+        return inspectorByName;
+    }
 }

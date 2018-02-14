@@ -23,7 +23,7 @@ public class ObiektRepository {
         return em.createQuery("from Obiekt", Obiekt.class).getResultList();
     }
 
-    public Obiekt getInspecotrById(int id){
+    public Obiekt getObiektById(int id){
         return em.find(Obiekt.class,id);
     }
 

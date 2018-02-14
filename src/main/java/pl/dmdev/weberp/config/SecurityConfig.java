@@ -19,13 +19,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity security) throws Exception {
         security.authorizeRequests()
                 .antMatchers("/").hasAnyAuthority("INSP","DYR")
-                .antMatchers("/dyrekcja/*").hasAnyAuthority("DYR")
+                .antMatchers("/dyrekcja/*").hasAnyAuthority("INSP","DYR")
                 .antMatchers("/inspektor/*").hasAnyAuthority("INSP")
                 .anyRequest().authenticated()
                 .and().formLogin().defaultSuccessUrl("/")
         ;
         security.csrf().disable();
 
+
+        security.authorizeRequests()
+                .anyRequest().authenticated()
+                .and()
+                .formLogin()
+                .loginPage("/login")
+                .permitAll();
 
     }
 

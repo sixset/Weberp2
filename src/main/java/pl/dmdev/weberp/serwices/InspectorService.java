@@ -38,4 +38,16 @@ public class InspectorService {
         return inspector;
     }
 
+    public Inspector getInspectorByUsername(String username) {
+        Inspector inspector = inspectorRepository.getInspectorByUsername(username);
+
+        return inspector;
+
+
+    }
+
+    public Collection<Obiekt> getAllObiekt(Inspector inspector) {
+        Inspector inspectorFromDb = inspectorRepository.getInspecotrById(inspector.getId());
+        return inspectorFromDb.getObjects();
+    }
 }

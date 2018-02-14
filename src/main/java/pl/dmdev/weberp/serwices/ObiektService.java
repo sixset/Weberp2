@@ -32,7 +32,7 @@ public class ObiektService {
     }
 
     public Obiekt getObjectById(int id) {
-        return obiektRepository.getInspecotrById(id);
+        return obiektRepository.getObiektById(id);
     }
 
     public void createnEewObject(int idInspecotr , Obiekt obiekt){
@@ -43,7 +43,7 @@ public class ObiektService {
     }
 
     public void deleteObject(Integer id) {
-        Obiekt obiekt =obiektRepository.getInspecotrById(id);
+        Obiekt obiekt =obiektRepository.getObiektById(id);
         Inspector inspector =obiekt.getInspector();
         inspector.getObjects().remove(obiekt);
         inspectorService.mergeInspector(inspector);

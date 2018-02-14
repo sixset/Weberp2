@@ -20,6 +20,11 @@ public class Obiekt {
 
     }
 
+    public Obiekt(String name, String adres) {
+        this.name = name;
+        this.adres = adres;
+    }
+
     public String getAdres() {
         return adres;
     }

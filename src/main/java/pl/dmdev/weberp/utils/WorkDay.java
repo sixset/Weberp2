@@ -1,5 +1,7 @@
 package pl.dmdev.weberp.utils;
 
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -30,6 +32,12 @@ public class WorkDay {
        int day= this.workDayCalendar.get(mounth);
        return day*8;
     }
+
+    public Collection<String> getAllMouths(){
+        return this.workDayCalendar.keySet();
+    }
+
+
 
     public Map<String, Integer> getWorkDayCalendar() {
         return workDayCalendar;
