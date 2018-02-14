@@ -44,6 +44,8 @@ public class ThymeleafWebMvcConfig extends WebMvcConfigurerAdapter {
     public void addViewControllers(ViewControllerRegistry registry) {
         registry.addViewController("/login").setViewName("login");
         registry.setOrder(Ordered.HIGHEST_PRECEDENCE);
-
+///
+        ///
+        //
     }
 }

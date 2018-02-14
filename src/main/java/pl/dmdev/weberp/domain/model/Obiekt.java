@@ -12,7 +12,7 @@ public class Obiekt {
     private String name;
     private String adres;
 
-    @ManyToOne(cascade = CascadeType.DETACH)
+    @ManyToOne(cascade = CascadeType.MERGE)
     @JoinColumn(name = "id_inspektor")
     private Inspector inspector;
 
