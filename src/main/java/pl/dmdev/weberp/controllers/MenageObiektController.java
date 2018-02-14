@@ -38,12 +38,12 @@ public class MenageObiektController {
 
     @GetMapping("/dyrekcja/newobject")
     public String newObiekt(Model model) {
-        Inspector inspector = inspectorService.createEmptyInspector();
-        Inspector inspecto2 = inspectorService.createEmptyInspector();
-        inspector.setName("Dominik");
-        inspecto2.setName("Ewa");
-        inspectorService.addNewIncpectorToDB(inspector);
-        inspectorService.addNewIncpectorToDB(inspecto2);
+//        Inspector inspector = inspectorService.createEmptyInspector();
+//        Inspector inspecto2 = inspectorService.createEmptyInspector();
+//        inspector.setName("Dominik");
+//        inspecto2.setName("Ewa");
+//        inspectorService.addNewIncpectorToDB(inspector);
+//        inspectorService.addNewIncpectorToDB(inspecto2);
 
         model.addAttribute("obiekt", obiektService.createEmptyObiekt());
         model.addAttribute("idHolder", new IdHolder());
