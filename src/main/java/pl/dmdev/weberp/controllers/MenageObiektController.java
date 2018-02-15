@@ -45,7 +45,7 @@ public class MenageObiektController {
 //        inspectorService.addNewIncpectorToDB(inspector);
 //        inspectorService.addNewIncpectorToDB(inspecto2);
 
-        model.addAttribute("obiekt", obiektService.createEmptyObiekt());
+        model.addAttribute("obiekt", new Obiekt());
         model.addAttribute("idHolder", new IdHolder());
         model.addAttribute("allinspector", inspectorService.getAllInspector());
 

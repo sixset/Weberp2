@@ -21,14 +21,14 @@ public class ScheduleController {
         return "schedules";
     }
 
-    @GetMapping("/inspektor/schedules/choose")
-    public String setMounthObject(Model model) {
-        List<String> allMounths = new ArrayList<>(shedulesService.getAllMounth());
-        List<Obiekt> allInspectorObiekt = new ArrayList<>(shedulesService.getAllInspObiekt());
-        model.addAttribute("mounths",allMounths);
-        model.addAttribute("allInspectorObiekt",allInspectorObiekt);
-     return "chooseparameters";
-    }
+//    @GetMapping("/inspektor/schedules/choose")
+//    public String setMounthObject(Model model) {
+//        List<String> allMounths = new ArrayList<>(shedulesService.getAllMounth());
+//        List<Obiekt> allInspectorObiekt = new ArrayList<>(shedulesService.getAllInspObiekt());
+//        model.addAttribute("mounths",allMounths);
+//        model.addAttribute("allInspectorObiekt",allInspectorObiekt);
+//     return "chooseparameters";
+//    }
 
     @GetMapping("/inspektor/schedules/new/schedule")
     public String getNewSchedules(Model model) {

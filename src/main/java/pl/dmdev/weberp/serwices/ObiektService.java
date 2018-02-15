@@ -18,7 +18,7 @@ public class ObiektService {
     InspectorService inspectorService;
 
     public Collection<Obiekt> getAllObiekt() {
-        return obiektRepository.getAllObiekt();
+        return obiektRepository.findAll();
     }
 
 
@@ -28,22 +28,22 @@ public class ObiektService {
 
     public void addNewObjectDB(Obiekt obiekt) {
 
-        obiektRepository.addNewObiekt(obiekt);
+        obiektRepository.save(obiekt);
     }
 
     public Obiekt getObjectById(int id) {
-        return obiektRepository.getObiektById(id);
+        return obiektRepository.getOne(id);
     }
 
     public void createnEewObject(int idInspecotr , Obiekt obiekt){
        Inspector inspector= inspectorService.getInspector(idInspecotr);
        inspector.addObject(obiekt);
-       inspectorService.mergeInspector(inspector);
+       inspectorService.addNewIncpectorToDB(inspector);
 
     }
 
     public void deleteObject(Integer id) {
-        Obiekt obiekt =obiektRepository.getObiektById(id);
+        Obiekt obiekt =obiektRepository.getOne(id);
         Inspector inspector =obiekt.getInspector();
         inspector.getObjects().remove(obiekt);
         inspectorService.mergeInspector(inspector);

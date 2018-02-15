@@ -18,14 +18,14 @@ public class InspectorService {
     }
 
     public Collection<Inspector> getAllInspector() {
-        return inspectorRepository.getAllInspector();
+        return inspectorRepository.findAll();
     }
 
     public void addNewIncpectorToDB(Inspector inspector){
-        inspectorRepository.addNewInspector(inspector);
+        inspectorRepository.save(inspector);
     }
     public void mergeInspector(Inspector inspector){
-        inspectorRepository.mergeInspector(inspector);
+        inspectorRepository.save(inspector);
     }
 
     public Inspector addObiekt(Inspector inspector, Obiekt obiekt){
@@ -34,20 +34,16 @@ public class InspectorService {
     }
 
     public Inspector getInspector(int id){
-        Inspector inspector =inspectorRepository.getInspecotrById(id);
+        Inspector inspector =inspectorRepository.getOne(id);
         return inspector;
     }
 
-    public Inspector getInspectorByUsername(String username) {
-        Inspector inspector = inspectorRepository.getInspectorByUsername(username);
+//    public Inspector getInspectorByUsername(String username) {
+//        Inspector inspector = inspectorRepository.(username);
+//
+//        return inspector;
+//
+//
+//    }
 
-        return inspector;
-
-
-    }
-
-    public Collection<Obiekt> getAllObiekt(Inspector inspector) {
-        Inspector inspectorFromDb = inspectorRepository.getInspecotrById(inspector.getId());
-        return inspectorFromDb.getObjects();
-    }
 }

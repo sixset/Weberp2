@@ -7,13 +7,12 @@ public class Obiekt {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id",updatable = false,nullable = false)
     private int id;
     private String name;
     private String adres;
 
-    @ManyToOne(cascade = CascadeType.MERGE)
-    @JoinColumn(name = "id_inspektor")
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_inspektor",nullable = false)
     private Inspector inspector;
 
     public Obiekt(){
@@ -55,5 +54,13 @@ public class Obiekt {
 
     public void setInspector(Inspector inspector) {
         this.inspector = inspector;
+        inspector.getObjects().add(this);
     }
+
+    @Override
+    public int hashCode() {
+        return Long.valueOf(getId()).hashCode();
+    }
+
+
 }

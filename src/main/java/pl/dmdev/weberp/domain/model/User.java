@@ -1,6 +1,7 @@
 package pl.dmdev.weberp.domain.model;
 
 import javax.persistence.*;
+import java.util.Objects;
 
 @Entity
 @Inheritance(strategy= InheritanceType.JOINED)
@@ -63,5 +64,23 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return id == user.id &&
+                enabled == user.enabled &&
+                Objects.equals(username, user.username) &&
+                Objects.equals(password, user.password) &&
+                Objects.equals(name, user.name);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(id, username, password, name, enabled);
     }
 }

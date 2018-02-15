@@ -21,35 +21,35 @@ public class EmployeeController {
     @Autowired
     EmployeeRepository employeeRepository;
 
-    @RequestMapping("/employees")
+    @RequestMapping("/kadry/employees")
     public String getEmployee(Model model) {
         List<Employee> allEmploye = employyeSerwice.getAllEmploye();
         model.addAttribute("employees", allEmploye);
         return "employees";
     }
 
-    @RequestMapping("/newemployee")
+    @RequestMapping("/kadry/newemployee")
     public String createEmployee(Model model) {
         model.addAttribute("employe", employyeSerwice.createEmptyEmployee());
         return "newemployee";
     }
 
-    @RequestMapping("/editemployee")
+    @RequestMapping("/kadry/editemployee")
     public String editEmployee(@RequestParam("id") Integer id, Model model) {
         Employee employee = employyeSerwice.getEmployee(id);
         model.addAttribute("editemployee", employee);
         return "editemployee";
     }
 
-    @RequestMapping(value = "/editemployee", method = RequestMethod.POST)
+    @RequestMapping(value = "/kadry/editemployee", method = RequestMethod.POST)
     public String saveEditEmployee(Employee editemploye) {
         employyeSerwice.saveEditEmploye(editemploye);
-        return "redirect:/employees";
+        return "redirect:/kadry/employees";
     }
 
-    @RequestMapping(value = "/employees", method = RequestMethod.POST)
+    @RequestMapping(value = "/kadry/employees", method = RequestMethod.POST)
     public String saveEmployee(Employee employee) {
         employeeRepository.saveEditEmploye(employee.getId(), employee);
-        return "redirect:/employees";
+        return "redirect:/kadry/employees";
     }
 }

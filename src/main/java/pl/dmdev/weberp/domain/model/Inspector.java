@@ -3,13 +3,15 @@ package pl.dmdev.weberp.domain.model;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 
 @Entity
 public class Inspector extends User{
 
 
-    @OneToMany(orphanRemoval=true,cascade = CascadeType.ALL,mappedBy = "inspector")
+    @OneToMany(cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY,mappedBy = "inspector")
     private Set<Obiekt> objects;
 
     public Inspector(){
@@ -27,7 +29,5 @@ public class Inspector extends User{
         this.objects.add(obiekt);
         obiekt.setInspector(this);
     }
-
-
 
 }

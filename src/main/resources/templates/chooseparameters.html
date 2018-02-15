@@ -32,26 +32,25 @@
 
 
                            <div class="form-group">
-                               <label for="deal" class="control-label col-md-2 col-sm-2 col-xs-12">Miesiąc<span class="required">*</span></label>
+                               <label for="deal" class="control-label col-md-2 col-sm-2 col-xs-12">Obiekt<span class="required">*</span></label>
                                <div class="col-md-3 col-sm-3 col-xs-12">
                                <select id="heard" class="form-control" required>
-                               <option th:each="mounth : ${allInspectorObiekt}" th:value="${mounth.name}" th:text="${mounth.name}" ></option>
+                               <option th:each="obiekt : ${allInspectorObiekt}" th:value="${obiekt.name}" th:text="${obiekt.name}" ></option>
 
                                  </select>
                            </div>
                                                </div>
-                           <div class="form-group">
-                               <label for="deal" class="control-label col-md-2 col-sm-2 col-xs-12">Obiekt<span class="required">*</span></label>
-                               <div class="col-md-3 col-sm-3 col-xs-12">
-                              <select id="heard" class="form-control" required>
-                                                          <option value="">Choose..</option>
-                                                          <option value="press">Press</option>
-                                                          <option value="net">Internet</option>
-                                                          <option value="mouth">Word of mouth</option>
-                                                        </select>
-                           </div>
-                                               </div>
+                                               <div class="form-group">
+                                               <label for="deal" class="control-label col-md-2 col-sm-2 col-xs-12">Miesiąc<span class="required">*</span></label>
+                                               <div class="col-md-3 col-sm-3 col-xs-12">
+                                               <select id="heard" class="form-control" required>
+                                               <option th:each="mounth : ${mounths}" th:value="${mounth}" th:text="${mounth}" ></option>
+
+                                                </select>
+                                                </div>
+                                                                                              </div>
                           <div class="ln_solid"></div>
+
                           <div class="form-group">
                             <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
 
