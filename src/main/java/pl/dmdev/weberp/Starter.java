@@ -36,8 +36,8 @@ public class Starter implements CommandLineRunner {
         inspector2.setEnabled(true);
         inspector.setPassword("test");
         inspector2.setPassword("test");
-        inspector.setName("Inspektor");
-        inspector2.setName("Dyrektor");
+        inspector.setName("Inspektor1");
+        inspector2.setName("Dyrektor2");
         inspectorService.addNewIncpectorToDB(inspector);
         inspectorService.addNewIncpectorToDB(inspector2);
 
