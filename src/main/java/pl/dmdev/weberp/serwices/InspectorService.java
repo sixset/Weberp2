@@ -35,4 +35,7 @@ public class InspectorService {
         return inspector;
     }
 
+    public Inspector getInspectorByUsername(String currentPrincipalName) {
+        return inspectorRepository.getInspectorByUsername(currentPrincipalName);
+    }
 }

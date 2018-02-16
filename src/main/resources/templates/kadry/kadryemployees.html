@@ -99,8 +99,9 @@
                           <th>Stawka</th>
                           <th>Numer Legitymacji</th>
                           <th>POF</th>
-                          <th></th>
-                           </tr>
+                          <th>Edytuj</th>
+                          <th>Usuń</th>
+                        </tr>
                       </thead>
 
 
@@ -112,10 +113,8 @@
                           <td th:text="${employee.rate}"></td>
                           <td th:text="${employee.numberoflegit}"></td>
                           <td th:text="${employee.pof}"></td>
-                          <td>
-                           <span th:if="${employee.inspector==null}"><a a th:href="${'/inspektor/addtome?id='+employee.id}"><i class="fa fa-user"></i> Dodaj</a></span>
-                            <span th:if="${employee.inspector!=null}" th:text="${employee.inspector.name}"/>
-                          </td>
+                          <td><a th:href="${'/kadry/editemployee?id='+employee.id}"><i class="fa fa-edit "> Edytuj</i></a> </td>
+                          <td><a href=""><i class="fa fa-close "> Usuń</i> </a></td>
                         </tr>
                       </tbody>
                     </table>

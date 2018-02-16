@@ -29,7 +29,7 @@ public class MenageObiektController {
         List<Obiekt> allObiekt = new ArrayList<>(obiektService.getAllObiekt());
         model.addAllAttributes(allObiekt);
         model.addAttribute("allobject", allObiekt);
-        return "objectsadmin";
+        return "dyrekcja/objectsadmin";
 
     }
 
@@ -41,7 +41,7 @@ public class MenageObiektController {
         model.addAttribute("idHolder", new IdHolder());
         model.addAttribute("allinspector", inspectorService.getAllInspector());
 
-        return "newobject";
+        return "dyrekcja/newobject";
     }
 
     @RequestMapping(value = "/objectsadmin", method = RequestMethod.POST)

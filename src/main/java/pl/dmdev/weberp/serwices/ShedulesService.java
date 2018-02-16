@@ -26,11 +26,12 @@ public class ShedulesService {
         return workDay.getAllMouths();
     }
 
- /*   public Collection <Obiekt> getAllInspObiekt() {
+
+    public Collection <Obiekt> getAllInspObiekt() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String currentPrincipalName = authentication.getName();
         Inspector inspector = inspectorService.getInspectorByUsername(currentPrincipalName);
        return inspector.getObjects();
 
-    }*/
+    }
 }

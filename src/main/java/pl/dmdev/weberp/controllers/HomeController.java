@@ -1,14 +1,24 @@
 package pl.dmdev.weberp.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pl.dmdev.weberp.domain.model.Employee;
+import pl.dmdev.weberp.domain.model.Obiekt;
+import pl.dmdev.weberp.serwices.EmployyeSerwice;
+import pl.dmdev.weberp.serwices.ObiektService;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class HomeController {
+
+    @Autowired
+    ObiektService obiektService;
 
 
     @GetMapping("/")
@@ -17,11 +27,15 @@ public class HomeController {
         return "index";
     }
 
-//    @GetMapping("/login")
-//    public String login() {
-//        return "login";
-//    }
 
+
+    @GetMapping("/objects")
+    public String getAllObjects(Model model) {
+        List<Obiekt> allObiekt = new ArrayList<>(obiektService.getAllObiekt());
+        model.addAllAttributes(allObiekt);
+        model.addAttribute("allobject", allObiekt);
+        return "objects";
+    }
 
 
 }
