@@ -13,37 +13,26 @@ public class InspectorService {
     @Autowired
     InspectorRepository inspectorRepository;
 
-    public Inspector createEmptyInspector(){
+    public Inspector createEmptyInspector() {
         return new Inspector();
     }
 
     public Collection<Inspector> getAllInspector() {
-        return inspectorRepository.findAll();
+        return inspectorRepository.getAllInspector();
     }
 
-    public void addNewIncpectorToDB(Inspector inspector){
-        inspectorRepository.save(inspector);
-    }
-    public void mergeInspector(Inspector inspector){
-        inspectorRepository.save(inspector);
+    public void addNewIncpectorToDB(Inspector inspector) {
+        inspectorRepository.addNewInspector(inspector);
     }
 
-    public Inspector addObiekt(Inspector inspector, Obiekt obiekt){
-        inspector.getObjects().add(obiekt);
+    public void mergeInspector(Inspector inspector) {
+        inspectorRepository.mergeInspector(inspector);
+    }
+
+
+    public Inspector getInspector(int id) {
+        Inspector inspector = inspectorRepository.getInspecotrById(id);
         return inspector;
     }
-
-    public Inspector getInspector(int id){
-        Inspector inspector =inspectorRepository.getOne(id);
-        return inspector;
-    }
-
-//    public Inspector getInspectorByUsername(String username) {
-//        Inspector inspector = inspectorRepository.(username);
-//
-//        return inspector;
-//
-//
-//    }
 
 }

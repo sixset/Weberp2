@@ -1,10 +1,7 @@
 package pl.dmdev.weberp.domain.model;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 public class Inspector extends User{
@@ -12,7 +9,7 @@ public class Inspector extends User{
 
     @OneToMany(cascade = CascadeType.ALL,
             fetch = FetchType.LAZY,mappedBy = "inspector")
-    private Set<Obiekt> objects;
+    private Set<Obiekt> objects=  new HashSet<Obiekt>();
 
     public Inspector(){
     }
@@ -28,6 +25,10 @@ public class Inspector extends User{
     public void addObject(Obiekt obiekt){
         this.objects.add(obiekt);
         obiekt.setInspector(this);
+    }
+
+    public void removeChild(Obiekt obiekt){
+        this.objects.remove(obiekt);
     }
 
 }

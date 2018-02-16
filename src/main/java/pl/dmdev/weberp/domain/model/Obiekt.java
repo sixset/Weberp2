@@ -16,7 +16,6 @@ public class Obiekt {
     private Inspector inspector;
 
     public Obiekt(){
-
     }
 
     public Obiekt(String name, String adres) {
@@ -54,7 +53,6 @@ public class Obiekt {
 
     public void setInspector(Inspector inspector) {
         this.inspector = inspector;
-        inspector.getObjects().add(this);
     }
 
     @Override

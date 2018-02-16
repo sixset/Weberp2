@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 import pl.dmdev.weberp.domain.model.Inspector;
 import pl.dmdev.weberp.domain.model.Obiekt;
 import pl.dmdev.weberp.domain.repository.ObiektRepository;
+import pl.dmdev.weberp.utils.IdHolder;
 
 import java.util.Collection;
 
@@ -26,26 +27,27 @@ public class ObiektService {
         return new Obiekt();
     }
 
-    public void addNewObjectDB(Obiekt obiekt) {
-
-        obiektRepository.save(obiekt);
-    }
 
     public Obiekt getObjectById(int id) {
         return obiektRepository.getOne(id);
     }
 
-    public void createnEewObject(int idInspecotr , Obiekt obiekt){
-       Inspector inspector= inspectorService.getInspector(idInspecotr);
-       inspector.addObject(obiekt);
-       inspectorService.addNewIncpectorToDB(inspector);
+
+    public void deleteObject(Integer id) {
+      Obiekt obiekt = getObjectById(id);
+      Inspector inspector = obiekt.getInspector();
+      inspector.removeChild(obiekt);
+      obiektRepository.delete(obiekt);
+      inspectorService.mergeInspector(inspector);
 
     }
 
-    public void deleteObject(Integer id) {
-        Obiekt obiekt =obiektRepository.getOne(id);
-        Inspector inspector =obiekt.getInspector();
-        inspector.getObjects().remove(obiekt);
+    public void addNewObjectDBWithInspecotr(int id, Obiekt obiektFromView) {
+        Obiekt newObject = new Obiekt();
+        newObject.setName(obiektFromView.getName());
+        newObject.setAdres(obiektFromView.getAdres());
+        Inspector inspector =inspectorService.getInspector(id);
+        inspector.addObject(newObject);
         inspectorService.mergeInspector(inspector);
     }
 }

@@ -24,10 +24,6 @@ public class MenageObiektController {
     @Autowired
     InspectorService inspectorService;
 
-//    @GetMapping("/allobiektadmin")
-//    public String index(Model model) { ;
-//        return "allobiektadmin";
-//    }
     @GetMapping("/dyrekcja/objects")
     public String getAllObjectsForAdmin(Model model) {
         List<Obiekt> allObiekt = new ArrayList<>(obiektService.getAllObiekt());
@@ -36,14 +32,9 @@ public class MenageObiektController {
         return "objectsadmin";
     }
 
+
     @GetMapping("/dyrekcja/newobject")
     public String newObiekt(Model model) {
-//        Inspector inspector = inspectorService.createEmptyInspector();
-//        Inspector inspecto2 = inspectorService.createEmptyInspector();
-//        inspector.setName("Dominik");
-//        inspecto2.setName("Ewa");
-//        inspectorService.addNewIncpectorToDB(inspector);
-//        inspectorService.addNewIncpectorToDB(inspecto2);
 
         model.addAttribute("obiekt", new Obiekt());
         model.addAttribute("idHolder", new IdHolder());
@@ -54,7 +45,7 @@ public class MenageObiektController {
 
     @RequestMapping(value = "/objectsadmin", method = RequestMethod.POST)
     public String saveEditEmployee(Obiekt obiekt,IdHolder idHolder) {
-        obiektService.createnEewObject(Integer.valueOf(idHolder.getId()),obiekt);
+       obiektService.addNewObjectDBWithInspecotr(idHolder.getId(),obiekt);
         return "redirect:/dyrekcja/objects";
     }
 

@@ -28,6 +28,8 @@ public class Starter implements CommandLineRunner {
 
 
     public void run(String... strings) throws Exception {
+
+
         Inspector inspector = new Inspector();
         Inspector inspector2 = new Inspector();
         inspector.setUsername("inspektorlogin");
@@ -43,7 +45,7 @@ public class Starter implements CommandLineRunner {
 
         Role inspektorRole = new Role();
         inspektorRole.setUsername("inspektorlogin");
-            inspektorRole.setRole("INSP");
+        inspektorRole.setRole("INSP");
 
         Role dyrRole = new Role();
         dyrRole.setUsername("dyrektorlogin");
@@ -51,8 +53,6 @@ public class Starter implements CommandLineRunner {
 
         roleRepository.persistRole(inspektorRole);
         roleRepository.persistRole(dyrRole);
-
-
 
     }
 }
