@@ -30,6 +30,7 @@ public class MenageObiektController {
         model.addAllAttributes(allObiekt);
         model.addAttribute("allobject", allObiekt);
         return "objectsadmin";
+
     }
 
 
