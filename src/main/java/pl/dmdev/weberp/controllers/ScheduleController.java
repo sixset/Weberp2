@@ -18,17 +18,17 @@ public class ScheduleController {
     @GetMapping("/inspektor/schedules")
     public String index() {
 
-        return "schedules";
+        return "shedule/schedules";
     }
 
-//    @GetMapping("/inspektor/schedules/choose")
-//    public String setMounthObject(Model model) {
-//        List<String> allMounths = new ArrayList<>(shedulesService.getAllMounth());
-//        List<Obiekt> allInspectorObiekt = new ArrayList<>(shedulesService.getAllInspObiekt());
-//        model.addAttribute("mounths",allMounths);
-//        model.addAttribute("allInspectorObiekt",allInspectorObiekt);
-//     return "chooseparameters";
-//    }
+    @GetMapping("/inspektor/schedules/choose")
+    public String setMounthObject(Model model) {
+        List<String> allMounths = new ArrayList<>(shedulesService.getAllMounth());
+        List<Obiekt> allInspectorObiekt = new ArrayList<>(shedulesService.getAllInspObiekt());
+        model.addAttribute("mounths",allMounths);
+        model.addAttribute("allInspectorObiekt",allInspectorObiekt);
+     return "shedule/chooseparameters";
+    }
 
     @GetMapping("/inspektor/schedules/new/schedule")
     public String getNewSchedules(Model model) {
@@ -37,7 +37,7 @@ public class ScheduleController {
             listday.add(String.valueOf(i));
         }
         model.addAttribute("dayInMounth",listday);
-        return "newschedule";
+        return "shedule/newschedule";
     }
 
 

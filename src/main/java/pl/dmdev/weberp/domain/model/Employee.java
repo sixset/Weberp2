@@ -3,10 +3,7 @@ package pl.dmdev.weberp.domain.model;
 
 import org.springframework.stereotype.Component;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 
 @Entity
@@ -34,7 +31,18 @@ public class Employee {
 
     private String eko;
 
+    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_inspektor",nullable = true)
+    private Inspector inspector;
 
+
+    public Inspector getInspector() {
+        return inspector;
+    }
+
+    public void setInspector(Inspector inspector) {
+        this.inspector = inspector;
+    }
 
     public Employee(){
     }

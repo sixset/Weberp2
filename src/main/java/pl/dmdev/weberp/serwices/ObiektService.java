@@ -38,7 +38,7 @@ public class ObiektService {
       Inspector inspector = obiekt.getInspector();
       inspector.removeChild(obiekt);
       obiektRepository.delete(obiekt);
-      inspectorService.mergeInspector(inspector);
+//      inspectorService.mergeInspector(inspector);
 
     }
 
