@@ -11,7 +11,7 @@ public class Obiekt {
     private String name;
     private String adres;
 
-    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.PERSIST,fetch = FetchType.LAZY)
     @JoinColumn(name = "id_inspektor",nullable = false)
     private Inspector inspector;
 

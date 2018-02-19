@@ -8,7 +8,7 @@ public class Inspector extends User{
 
 
     @OneToMany(cascade = CascadeType.ALL,
-            fetch = FetchType.LAZY,mappedBy = "inspector")
+            fetch = FetchType.LAZY,mappedBy = "inspector",orphanRemoval = true)
     private Set<Obiekt> objects=  new HashSet<Obiekt>();
 
     @OneToMany(cascade = CascadeType.ALL,
