@@ -2,15 +2,18 @@ package pl.dmdev.weberp.domain.model;
 
 
 import org.springframework.stereotype.Component;
+import pl.dmdev.weberp.serwices.ShedulesService;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 
 @Entity
 public class Employee {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
     private String name;
@@ -31,10 +34,34 @@ public class Employee {
 
     private String eko;
 
-    @ManyToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    @JoinColumn(name = "id_inspektor",nullable = true)
+    private boolean settlement;
+
+
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_inspektor", nullable = true)
     private Inspector inspector;
 
+
+    @ManyToMany(cascade = {CascadeType.ALL})
+    @JoinTable(
+            name = "Employee_Scheldue",
+            joinColumns = {@JoinColumn(name = "employee_id")},
+            inverseJoinColumns = {@JoinColumn(name = "sheldue_id")}
+    )
+    private Set<Schedule> schedules = new HashSet<>();
+
+
+    public Employee() {
+        settlement = false;
+    }
+
+    public Set<Schedule> getSchedules() {
+        return schedules;
+    }
+
+    public void setSchedules(Set<Schedule> schedules) {
+        this.schedules = schedules;
+    }
 
     public Inspector getInspector() {
         return inspector;
@@ -44,10 +71,16 @@ public class Employee {
         this.inspector = inspector;
     }
 
-    public Employee(){
+
+    public boolean isSettlement() {
+        return settlement;
     }
 
-    public Employee(int id,String name, String lastname, String deal, int rate, int pof, int numberoflegit,String sil,String sys,String eko) {
+    public void setSettlement(boolean settlement) {
+        this.settlement = settlement;
+    }
+
+    public Employee(int id, String name, String lastname, String deal, int rate, int pof, int numberoflegit, String sil, String sys, String eko) {
         this.name = name;
         this.lastname = lastname;
         this.deal = deal;
