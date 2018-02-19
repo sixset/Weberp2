@@ -16,7 +16,7 @@ public class Obiekt {
     private Inspector inspector;
 
     public Obiekt(){
-        //test czy dziala
+
     }
 
     public Obiekt(String name, String adres) {

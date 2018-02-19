@@ -4,8 +4,14 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import pl.dmdev.weberp.domain.model.Obiekt;
+import pl.dmdev.weberp.serwices.ObiektService;
 import pl.dmdev.weberp.serwices.ShedulesService;
+import pl.dmdev.weberp.utils.IdHolder;
+import pl.dmdev.weberp.utils.Mounth;
+import pl.dmdev.weberp.utils.WorkDay;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,6 +20,8 @@ import java.util.List;
 public class ScheduleController {
     @Autowired
     ShedulesService shedulesService;
+    @Autowired
+    ObiektService obiektService;
 
     @GetMapping("/inspektor/schedules")
     public String index() {
@@ -22,21 +30,22 @@ public class ScheduleController {
     }
 
     @GetMapping("/inspektor/schedules/choose")
-    public String setMounthObject(Model model) {
+    public String setParameter(Model model) {
         List<String> allMounths = new ArrayList<>(shedulesService.getAllMounth());
         List<Obiekt> allInspectorObiekt = new ArrayList<>(shedulesService.getAllInspObiekt());
         model.addAttribute("mounths",allMounths);
         model.addAttribute("allInspectorObiekt",allInspectorObiekt);
+        model.addAttribute("obiekt",new Obiekt());
+        model.addAttribute("mounthName",new Mounth());
      return "shedule/chooseparameters";
     }
 
-    @GetMapping("/inspektor/schedules/new/schedule")
-    public String getNewSchedules(Model model) {
-        List<String> listday = new ArrayList<>();
-        for (int i = 1; i<=31 ; i++) {
-            listday.add(String.valueOf(i));
-        }
-        model.addAttribute("dayInMounth",listday);
+
+    @RequestMapping(value = "/inspektor/schedules/new/schedule", method = RequestMethod.POST)
+    public String getNewSchedules(Model model, Obiekt obiekt,Mounth nameOfMounth) {
+        Obiekt obiekFromDb=obiektService.getObjectById(obiekt.getId());
+        model.addAttribute("nameOfMounth",nameOfMounth);
+        model.addAttribute("obiekt",obiekFromDb);
         return "shedule/newschedule";
     }
 

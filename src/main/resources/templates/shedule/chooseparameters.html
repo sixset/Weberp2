@@ -25,7 +25,7 @@
    </div>
    <div class="x_content">
      <br />
-    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left">
+    <form id="demo-form2" data-parsley-validate class="form-horizontal form-label-left"  th:action="@{/inspektor/schedules/new/schedule}" th:method="post">
 
 
 
@@ -34,8 +34,8 @@
                            <div class="form-group">
                                <label for="deal" class="control-label col-md-2 col-sm-2 col-xs-12">Obiekt<span class="required">*</span></label>
                                <div class="col-md-3 col-sm-3 col-xs-12">
-                               <select id="heard" class="form-control" required>
-                               <option th:each="obiekt : ${allInspectorObiekt}" th:value="${obiekt.name}" th:text="${obiekt.name}" ></option>
+                               <select id="heard" class="form-control" required th:field="${obiekt.id}">
+                               <option th:each="obiekt : ${allInspectorObiekt}" th:value="${obiekt.id}" th:text="${obiekt.name}" ></option>
 
                                  </select>
                            </div>
@@ -43,7 +43,7 @@
                                                <div class="form-group">
                                                <label for="deal" class="control-label col-md-2 col-sm-2 col-xs-12">Miesiąc<span class="required">*</span></label>
                                                <div class="col-md-3 col-sm-3 col-xs-12">
-                                               <select id="heard" class="form-control" required>
+                                               <select id="heard" class="form-control" required th:field="${mounthName.name}">
                                                <option th:each="mounth : ${mounths}" th:value="${mounth}" th:text="${mounth}" ></option>
 
                                                 </select>
