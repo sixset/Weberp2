@@ -50,6 +50,10 @@ public class Employee {
     )
     private Set<Schedule> schedules = new HashSet<>();
 
+    @OneToMany(cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY, mappedBy = "employee")
+    private Set <Settlement> settlements;
+
 
     public Employee() {
         settlement = false;
@@ -93,6 +97,22 @@ public class Employee {
         this.id = id;
     }
 
+    public Set<Settlement> getSettlements() {
+        return settlements;
+    }
+
+    public void addSettlement(Settlement settlement){
+        this.settlements.add(settlement);
+        settlement.setEmployee(this);
+    }
+
+    public void removeSettlement(Settlement settlement){
+        this.settlements.remove(settlement);
+    }
+
+    public void setSettlements(Set<Settlement> settlements) {
+        this.settlements = settlements;
+    }
 
     public int getId() {
         return id;

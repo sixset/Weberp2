@@ -5,8 +5,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+import pl.dmdev.weberp.domain.model.Employee;
 import pl.dmdev.weberp.domain.model.Inspector;
 import pl.dmdev.weberp.domain.model.Obiekt;
+import pl.dmdev.weberp.serwices.EmployyeSerwice;
 import pl.dmdev.weberp.serwices.InspectorService;
 import pl.dmdev.weberp.serwices.ObiektService;
 import pl.dmdev.weberp.utils.Role;
@@ -25,6 +27,9 @@ public class Starter implements CommandLineRunner {
 
     @Autowired
     ObiektService obiektService;
+
+    @Autowired
+    EmployyeSerwice employyeSerwice;
 
 
     public void run(String... strings) throws Exception {
@@ -53,6 +58,9 @@ public class Starter implements CommandLineRunner {
 
         roleRepository.persistRole(inspektorRole);
         roleRepository.persistRole(dyrRole);
+
+
+
 
     }
 }

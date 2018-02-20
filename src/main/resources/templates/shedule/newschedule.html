@@ -85,6 +85,8 @@
             <div class="clearfix"></div>
 
             <div class="row">
+                <div class="form-group">
+
               <div class="col-md-14 col-sm-14 col-xs-14">
                 <div class="x_panel">
                   <div class="x_title">
@@ -97,13 +99,18 @@
 
 
 
-<div class="bodycontainer scrollable">
+<div class="bodycontainer scrollable" th:object="${testowa}">
 <div class="table-responsive">
-    <table class="table table-striped table-hover table-condensed">
-        <thead>
+    <table class="table table-striped table-hover table-condensed" >
+     <select id="heard" class="form-control">
+                    <option th:each="employee : ${employees}" th:value="${employee.id}" th:text="${employee.lastname}" ></option>
+                    </select>
+        <thead >
             <tr>
 
-                <th class="text-center">#</th>
+                <th class="text-center">
+              #
+                </th>
                 <th class="text-center">1</th>
                 <th class="text-center">2</th>
                 <th class="text-center">3</th>
@@ -139,85 +146,90 @@
             </tr>
         </thead>
           <tbody>
+          <form th:action="@{/inspektor/schedules/new/schedules/results}" th:method="POST">
                                <tr>
                                <th>Start</th>
-                               <td><input type="time"></td>
-                               <td><input type="time"></td>
-                               <td><input type="time"></td>
-                               <td><input type="time"></td>
-                               <td><input type="time"></td>
-                               <td><input type="time"></td>
-                               <td><input type="time"></td>
-                               <td><input type="time"></td>
-                               <td><input type="time"></td>
-                               <td><input type="time"></td>
-                               <td><input type="time"></td>
-                               <td><input type="time"></td>
-                               <td><input type="time"></td>
-                               <td><input type="time"></td>
-                               <td><input type="time"></td>
-                               <td><input type="time"></td>
-                               <td><input type="time"></td>
-                               <td><input type="time"></td>
-                               <td><input type="time"></td>
-                               <td><input type="time"></td>
-                               <td><input type="time"></td>
-                               <td><input type="time"></td>
-                               <td><input type="time"></td>
-                               <td><input type="time"></td>
-                               <td><input type="time"></td>
-                               <td><input type="time"></td>
-                               <td><input type="time"></td>
-                               <td><input type="time"></td>
+                               <td><input type="time" th:field="${dayHourList.list}"></td>
+                               <td><input type="time" th:field="${dayHourList.list}"></td>
+                               <td><input type="time" th:field="${dayHourList.list}"></td>
+                               <td><input type="time" th:field="${dayHourList.list}"></td>
+                               <td><input type="time" th:field="${dayHourList.list}"></td>
+                               <td><input type="time" th:field="${dayHourList.list}"></td>
+                               <td><input type="time" th:field="${dayHourList.list}"></td>
+                               <td><input type="time" th:field="${dayHourList.list}"></td>
+                               <td><input type="time" th:field="${dayHourList.list}"></td>
+                               <td><input type="time" th:field="${dayHourList.list}"></td>
+                               <td><input type="time" th:field="${dayHourList.list}"></td>
+                               <td><input type="time" th:field="${dayHourList.list}"></td>
+                               <td><input type="time" th:field="${dayHourList.list}"></td>
+                               <td><input type="time" th:field="${dayHourList.list}"></td>
+                               <td><input type="time" th:field="${dayHourList.list}"></td>
+                               <td><input type="time" th:field="${dayHourList.list}"></td>
+                               <td><input type="time" th:field="${dayHourList.list}"></td>
+                               <td><input type="time" th:field="${dayHourList.list}"></td>
+                               <td><input type="time" th:field="${dayHourList.list}"></td>
+                               <td><input type="time" th:field="${dayHourList.list}"></td>
+                               <td><input type="time" th:field="${dayHourList.list}"></td>
+                               <td><input type="time" th:field="${dayHourList.list}"></td>
+                               <td><input type="time" th:field="${dayHourList.list}"></td>
+                               <td><input type="time" th:field="${dayHourList.list}"></td>
+                               <td><input type="time" th:field="${dayHourList.list}"></td>
+                               <td><input type="time" th:field="${dayHourList.list}"></td>
+                               <td><input type="time" th:field="${dayHourList.list}"></td>
+                               <td><input type="time" th:field="${dayHourList.list}"></td>
+                               <td><input type="time" th:field="${dayHourList.list}"></td>
+                               <td><input type="time" th:field="${dayHourList.list}"></td>
 
                                 </tr>
                                  <tr>
                                                                <th>End</th>
-                                                               <td><input type="time"></td>
-                                                               <td><input type="time"></td>
-                                                               <td><input type="time"></td>
-                                                               <td><input type="time"></td>
-                                                               <td><input type="time"></td>
-                                                               <td><input type="time"></td>
-                                                               <td><input type="time"></td>
-                                                               <td><input type="time"></td>
-                                                               <td><input type="time"></td>
-                                                               <td><input type="time"></td>
-                                                               <td><input type="time"></td>
-                                                               <td><input type="time"></td>
-                                                               <td><input type="time"></td>
-                                                               <td><input type="time"></td>
-                                                               <td><input type="time"></td>
-                                                               <td><input type="time"></td>
-                                                               <td><input type="time"></td>
-                                                               <td><input type="time"></td>
-                                                               <td><input type="time"></td>
-                                                               <td><input type="time"></td>
-                                                               <td><input type="time"></td>
-                                                               <td><input type="time"></td>
-                                                               <td><input type="time"></td>
-                                                               <td><input type="time"></td>
-                                                               <td><input type="time"></td>
-                                                               <td><input type="time"></td>
-                                                               <td><input type="time"></td>
-                                                               <td><input type="time"></td>
+                                                               <td><input type="time" th:field="${nightHourList.list}"></td>
+                                                              <td><input type="time" th:field="${nightHourList.list}"></td>
+                                                              <td><input type="time" th:field="${nightHourList.list}"></td>
+                                                              <td><input type="time" th:field="${nightHourList.list}"></td>
+                                                              <td><input type="time" th:field="${nightHourList.list}"></td>
+                                                              <td><input type="time" th:field="${nightHourList.list}"></td>
+                                                              <td><input type="time" th:field="${nightHourList.list}"></td>
+                                                              <td><input type="time" th:field="${nightHourList.list}"></td>
+                                                              <td><input type="time" th:field="${nightHourList.list}"></td>
+                                                              <td><input type="time" th:field="${nightHourList.list}"></td>
+                                                              <td><input type="time" th:field="${nightHourList.list}"></td>
+                                                              <td><input type="time" th:field="${nightHourList.list}"></td>
+                                                              <td><input type="time" th:field="${nightHourList.list}"></td>
+                                                              <td><input type="time" th:field="${nightHourList.list}"></td>
+                                                              <td><input type="time" th:field="${nightHourList.list}"></td>
+                                                              <td><input type="time" th:field="${nightHourList.list}"></td>
+                                                              <td><input type="time" th:field="${nightHourList.list}"></td>
+                                                              <td><input type="time" th:field="${nightHourList.list}"></td>
+                                                              <td><input type="time" th:field="${nightHourList.list}"></td>
+                                                              <td><input type="time" th:field="${nightHourList.list}"></td>
+                                                              <td><input type="time" th:field="${nightHourList.list}"></td>
+                                                              <td><input type="time" th:field="${nightHourList.list}"></td>
+                                                              <td><input type="time" th:field="${nightHourList.list}"></td>
+                                                              <td><input type="time" th:field="${nightHourList.list}"></td>
+                                                              <td><input type="time" th:field="${nightHourList.list}"></td>
+                                                              <td><input type="time" th:field="${nightHourList.list}"></td>
+                                                              <td><input type="time" th:field="${nightHourList.list}"></td>
+                                                              <td><input type="time" th:field="${nightHourList.list}"></td>
+                                                              <td><input type="time" th:field="${nightHourList.list}"></td>
+                                                              <td><input type="time" th:field="${nightHourList.list}"></td>
 
-                                                                </tr>
 
-                              </tbody>
+
+                                                               </tr>
+                                                               <button type="submit">Przelicz</button>
+
+</form>
+                            </tbody>
     </table>
                     </div>
                   </div>
                 </div>
               </div>
-
-
-
-
-
             </div>
           </div>
         </div>
+
 
         <!-- /page content -->
         <!-- footer content -->
