@@ -52,7 +52,9 @@
 
  <tbody>
                         <tr th:each=" day : ${dayHourList}">
-                       <td> <input type="time" value="${day}"></td>
+                        <p th:text="${day.list[0]}"></p>
+                       <td> <input type="time" th:value="${day.list[0]}"></td>
+                       <td> <input type="time" value="13:33"></td>
                           <td th:text="${day.list}"></td>
 
                         </tr>

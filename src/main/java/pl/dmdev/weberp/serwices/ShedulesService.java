@@ -27,11 +27,46 @@ public class ShedulesService {
     }
 
 
-    public Collection <Obiekt> getAllInspObiekt() {
+    public Collection<Obiekt> getAllInspObiekt() {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         String currentPrincipalName = authentication.getName();
         Inspector inspector = inspectorService.getInspectorByUsername(currentPrincipalName);
-       return inspector.getObjects();
+        return inspector.getObjects();
 
+    }
+
+    public boolean isCorrect(List<String> listOfHour) {
+        if (NumberOfFields(listOfHour)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public List<String> getHourWokr(List<String> hour) {
+        return null;
+
+    }
+    //ToDo
+    //Its look ugly ;) but Work's
+    public boolean NumberOfFields(List<String> listOfHour) {
+        int checkSart = 0;
+        int checkEnd = 0;
+        for (int i = 0; i < 30; i++) {
+            if (listOfHour.get(i).isEmpty()) {
+                checkSart++;
+            }
+        }
+        for (int i = 30; i < listOfHour.size(); i++) {
+            if (listOfHour.get(i).isEmpty()) {
+                checkEnd++;
+            }
+        }
+
+        if (checkEnd != checkSart) {
+            return false;
+        } else {
+            return true;
+        }
     }
 }

@@ -14,6 +14,9 @@ import pl.dmdev.weberp.serwices.ObiektService;
 import pl.dmdev.weberp.utils.Role;
 import pl.dmdev.weberp.utils.RoleRepository;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Component
 @Scope("singleton")
@@ -34,30 +37,29 @@ public class Starter implements CommandLineRunner {
 
     public void run(String... strings) throws Exception {
 
-
-        Inspector inspector = new Inspector();
-        Inspector inspector2 = new Inspector();
-        inspector.setUsername("inspektorlogin");
-        inspector2.setUsername("dyrektorlogin");
-        inspector.setEnabled(true);
-        inspector2.setEnabled(true);
-        inspector.setPassword("test");
-        inspector2.setPassword("test");
-        inspector.setName("Inspektor1");
-        inspector2.setName("Dyrektor2");
-        inspectorService.addNewIncpectorToDB(inspector);
-        inspectorService.addNewIncpectorToDB(inspector2);
-
-        Role inspektorRole = new Role();
-        inspektorRole.setUsername("inspektorlogin");
-        inspektorRole.setRole("INSP");
-
-        Role dyrRole = new Role();
-        dyrRole.setUsername("dyrektorlogin");
-        dyrRole.setRole("DYR");
-
-        roleRepository.persistRole(inspektorRole);
-        roleRepository.persistRole(dyrRole);
+//        Inspector inspector = new Inspector();
+//        Inspector inspector2 = new Inspector();
+//        inspector.setUsername("inspektorlogin");
+//        inspector2.setUsername("dyrektorlogin");
+//        inspector.setEnabled(true);
+//        inspector2.setEnabled(true);
+//        inspector.setPassword("test");
+//        inspector2.setPassword("test");
+//        inspector.setName("Inspektor1");
+//        inspector2.setName("Dyrektor2");
+//        inspectorService.addNewIncpectorToDB(inspector);
+//        inspectorService.addNewIncpectorToDB(inspector2);
+//
+//        Role inspektorRole = new Role();
+//        inspektorRole.setUsername("inspektorlogin");
+//        inspektorRole.setRole("INSP");
+//
+//        Role dyrRole = new Role();
+//        dyrRole.setUsername("dyrektorlogin");
+//        dyrRole.setRole("DYR");
+//
+//        roleRepository.persistRole(inspektorRole);
+//        roleRepository.persistRole(dyrRole);
 
 
 

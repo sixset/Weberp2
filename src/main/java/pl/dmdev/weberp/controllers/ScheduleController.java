@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import pl.dmdev.weberp.domain.model.Employee;
@@ -27,6 +26,7 @@ public class ScheduleController {
     ObiektService obiektService;
     @Autowired
     InspectorService inspectorService;
+    @Autowired
 
     @GetMapping("/inspektor/schedules")
     public String index() {
@@ -61,10 +61,13 @@ public class ScheduleController {
     }
 
     @RequestMapping(value = "/inspektor/schedules/new/schedules/results", method = RequestMethod.POST)
-    public String getNewSchedules(ListOfStartHour listOfStartHour,ListOfEndHour listOfEndHour, Model model) {
-      model.addAttribute("dayHourList", listOfStartHour);
-      model.addAttribute("nightHourList", listOfEndHour);
-        return "shedule/result";
+    public String getNewSchedules(ListOfStartHour listOfStartHour, Model model) {
+      if (shedulesService.isCorrect(listOfStartHour.getList())){
+
+          model.addAttribute("dayHourList", listOfStartHour);
+          return "shedule/result";
+      }
+      return "/index";
     }
 
 }
